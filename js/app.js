@@ -18,7 +18,7 @@ $(document).ready(function() {
 		return function (feature, latlng) {
 			return L.circleMarker(latlng, {
 				radius: radius,
-				fillColor: '#F18017',
+				fillColor: '#F1D357',
 				color: '#000000',
 				weight: 1,
 				opacity: 1,
@@ -54,7 +54,7 @@ $(document).ready(function() {
 	});
 	
 	//get adm1 points and create reuseable backbone model
-	$.ajax('data/adm1Points.json', {async:false}).done(function(data) {
+	$.ajax('data/adm1PointsRandom.json', {async:false}).done(function(data) {
 		adm1PointLayer = new app.Layer({ geoJson: JSON.parse(data), leafletSettings: { pointToLayer: circleMarker(6) } });
 	});
 	
@@ -64,7 +64,7 @@ $(document).ready(function() {
 	});
 	
 	//get adm2 points and create reuseable backbone model
-	$.ajax('data/adm2Points.json', {async:false}).done(function(data) {
+	$.ajax('data/adm2PointsRandom.json', {async:false}).done(function(data) {
 		adm2PointLayer = new app.Layer({ geoJson: JSON.parse(data), leafletSettings: { pointToLayer: circleMarker(6) } });
 	});
 	
