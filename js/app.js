@@ -52,13 +52,9 @@ $(document).ready(function() {
 		return json;
 	}
 	
-	$.ajax({
-		url: 'data/adm0Polys.json',
-		dataType:'json',
-		async: false,
-		success: function (data) {
-			adm0PolyLayer = new app.Layer({ geoJson: data, leafletSettings: { style: polyStyle } });
-		}
+	//get country boundary and create reuseable backbone model
+	$.ajax('data/adm0Polys.json', {async:false}).done( function (data) {
+		adm0PolyLayer = new app.Layer({ geoJson: data, leafletSettings: { style: polyStyle } });
 	});
 	
 	//get adm1 polys and create reuseable backbone model
