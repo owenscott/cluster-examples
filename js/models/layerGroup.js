@@ -11,11 +11,11 @@ app.LayerGroup = Backbone.Model.extend({
 	},
 	
 	initialize: function () {
-		this.layers = new L.layerGroup();
+		this.attributes.layers = new L.layerGroup();
 	},
 	
 	addLayer: function(leafletLayer) {
-		this.layers.addLayer(leafletLayer);
+		this.attributes.layers.addLayer(leafletLayer);
 		return this;
 	},
 	

@@ -20,12 +20,12 @@ app.MapView = Backbone.View.extend({
 		this.map = L.map(this.el,{
 			dragging:true,
 			doubleClickZoom:true,
-			minZoom:4,
+			minZoom:5,
 			maxZoom:10
 		});
 	
-		//set new view
-		this.map.setView([40,-100], 4);
+		//set new view	
+		this.map.setView([-4,23], 5);
 		
 		//set zoom listeners (zoomend) => bind with apply to ensure right scope for this
 		this.map.on('zoomend', function () {self.updateLayerDisplay.apply(self)})		
@@ -42,13 +42,13 @@ app.MapView = Backbone.View.extend({
 	
 	addOneLayer: function(layerGroup) {
 		if (layerGroup.attributes.displayed === true) {
-			this.map.addLayer(layerGroup.layers);
+			this.map.addLayer(layerGroup.attributes.layers);
 		}
 	},
 										
 	
 	removeOneLayer: function(layerGroup) {
-		this.map.removeLayer(layerGroup.layers);
+		this.map.removeLayer(layerGroup.attributes.layers);
 	},
 	
 	addAllLayers: function() {
@@ -71,10 +71,10 @@ app.MapView = Backbone.View.extend({
 			}
 		}
 		
-		if ( layerGroup.attributes.displayed === true && this.map.hasLayer(layerGroup.layers) === false) {
+		if ( layerGroup.attributes.displayed === true && this.map.hasLayer(layerGroup.attributes.layers) === false) {
 			this.addOneLayer(layerGroup);
 		}
-		else if (layerGroup.attributes.displayed === false && this.map.hasLayer(layerGroup.layers) === true) {
+		else if (layerGroup.attributes.displayed === false && this.map.hasLayer(layerGroup.attributes.layers) === true) {
 			this.removeOneLayer(layerGroup);
 		}
 			

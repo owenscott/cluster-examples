@@ -5,11 +5,11 @@
 	margin-right:auto;
 }
 
-.map-div {
+.map2-div {
 	float:right;
 	display:block;
 }
-.control-div {
+.control2-div {
 	float:left;
 	display:block;
 }
@@ -21,4 +21,10 @@
 
 div .enabled {
 	background-color:#bbd8f5;
+	margin-right:50px;
 }
+
+div .layer-control {
+	padding-left:10px;
+}
+

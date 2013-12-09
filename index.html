@@ -7,22 +7,35 @@
 		<link rel="stylesheet" href="css/leaflet.css"/>
 		<link rel="stylesheet" href="css/MarkerCluster.css"/>
 		<link rel="stylesheet" href="css/MarkerCluster.Default.css"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="css/style.css"/>
 	</head>
 	<body>
 		
 		<!--actual page-->
 		<div class="container">
-			<div id="map1" class="example-container"></div>
-			<div id="map2" class="example-container"></div>
+			<div class="row-fluid"><h2>Map 1</h2><p>ADM1 and ADM2 change automatically based on zoom level while Project Sites are controlled by a check box.</p><br/></div>
+			<div id="map1" class="row-fluid example-container"><img src="img/ajax-loader.gif"/></div>
+			<br/>
+			<div class="row-fluid"><h2>Map 2</h2><p>ADM1, ADM2, and Project Sites change automatically based on zoom level.</p><br/></div>
+			<div id="map2" class="row-fluid example-container"><img src="img/ajax-loader.gif"/></div>
+			<br/>
+			<div class="row-fluid"><h2>Map 3</h2><p>ADM1 and ADM2 are controlled by radio buttons, while Project Sites are controlled by a check box.</p><br/></div>
+			<div id="map3" class="row-fluid example-container"><img src="img/ajax-loader.gif"/></div>
+			<br/>
+			<div class="row-fluid"><h2>Map 4</h2><p>ADM1, ADM2, and Project Sites are controlled by radio buttons.</p><br/></div>
+			<div id="map4" class="row-fluid example-container"><img src="img/ajax-loader.gif"/></div>
+			<br/>
+			<div class="row-fluid"><h2>Map 5</h2><p>ADM1, ADM2, and Project Sites are controlled by checkboxes.</p><br/></div>
+			<div id="map5" class="row-fluid example-container"><img src="img/ajax-loader.gif"/></div>			
 		</div>
 		
 		<!--templates-->
 		
 		<script id="layer-control-template" type="text/template">
 		
-			<label>
-				<% if ( toggleApproach === 'checkbox' ){%>
+			<label class= "<%= toggleApproach %>" >
+				<% if ( toggleApproach === 'checkbox' ) { %>
 					<input type="checkbox" <%= displayed ? "checked" : ""   %>/>
 				<% } else if (toggleApproach === 'radio') { %>
 					<input type="radio" name="<%= this.model.collection._listenerId %>" 
@@ -34,8 +47,8 @@
 		</script>
 		
 		<script id="map-example-template" type="text/template">
-			<div class="control-div"></div>
-			<div class="map-div"></div>
+			<div class="span3 control-div"></div>
+			<div class="span8 map-div"></div>
 		</script>
 		
 		<!--javascript-->

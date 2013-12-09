@@ -13,10 +13,10 @@ app.Layer = Backbone.Model.extend({
 	},
 	
 	initialize: function() {
-		this.createLeafletLayer()
+		this._createLeafletLayer()
 	},
 	
-	createLeafletLayer: function () {
+	_createLeafletLayer: function () {
 		var settings = settings || {};
 		if (this.attributes.geoJson) {
 			this._leafletLayer = function() { return L.geoJson (this.attributes.geoJson, this.attributes.leafletSettings); }

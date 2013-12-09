@@ -21,8 +21,11 @@ app.LayerControlView = Backbone.View.extend({
 	},
 	
 	initialize: function() {
+		this.$el.addClass('layer-control');
 		this.listenTo(this.model, 'change:displayed', this.updateStatus)
-		this.render();
+		if (this.model.attributes.toggleApproach !== 'none') {
+			this.render();
+		}
 	},
 	
 	onRadioDeselect: function() {
