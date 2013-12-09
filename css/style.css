@@ -1,0 +1,24 @@
+.leaflet-container {
+	width:900px;
+	height:500px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.map-div {
+	float:right;
+	display:block;
+}
+.control-div {
+	float:left;
+	display:block;
+}
+
+.container {
+	margin-left: 15%;
+	margin-right:15%;
+}
+
+div .enabled {
+	background-color:#bbd8f5;
+}
