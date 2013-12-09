@@ -63,27 +63,27 @@ $(document).ready(function() {
 	
 	//get adm1 polys and create reuseable backbone model
 	$.ajax('data/adm1Polys.json', {async:false}).done(function(data) {
-		adm1PolyLayer = new app.Layer({ geoJson: JSON.parse(data), leafletSettings: { style: polyStyle } });
+		adm1PolyLayer = new app.Layer({ geoJson: data, leafletSettings: { style: polyStyle } });
 	});
 	
 	//get adm1 points and create reuseable backbone model
 	$.ajax('data/adm1PointsRandom.json', {async:false}).done(function(data) {
-		adm1PointLayer = new app.Layer({ geoJson: JSON.parse(data), leafletSettings: { pointToLayer: circleMarker(6) } });
+		adm1PointLayer = new app.Layer({ geoJson: data, leafletSettings: { pointToLayer: circleMarker(6) } });
 	});
 	
 	//get adm2 polys and create reuseable backbone model
 	$.ajax('data/adm2Polys.json', {async:false}).done(function(data) {
-		adm2PolyLayer = new app.Layer({ geoJson: JSON.parse(data), leafletSettings: { style: polyStyle } });
+		adm2PolyLayer = new app.Layer({ geoJson: data, leafletSettings: { style: polyStyle } });
 	});
 	
 	//get adm2 points and create reuseable backbone model
 	$.ajax('data/adm2PointsRandom.json', {async:false}).done(function(data) {
-		adm2PointLayer = new app.Layer({ geoJson: JSON.parse(data), leafletSettings: { pointToLayer: circleMarker(6) } });
+		adm2PointLayer = new app.Layer({ geoJson: data, leafletSettings: { pointToLayer: circleMarker(6) } });
 	});
 	
 	//get project site points and create reuseable backbone model
 	$.ajax('data/projectSitePoints.json', {async:false}).done(function(data) {
-		projectSiteLayer = new app.Layer({ geoJson: JSON.parse(data), leafletSettings: { pointToLayer: circleMarker(2) } });
+		projectSiteLayer = new app.Layer({ geoJson: data, leafletSettings: { pointToLayer: circleMarker(2) } });
 	});
 	
 	
